@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
-import ServiceApp from '@/services/services';
+import { defineStore } from "pinia";
+import ServiceApp from "@/services/services";
 
-export const useCharacter = defineStore('character-store', {
+export const useCharacter = defineStore("character-store", {
   state: () => {
     return {
       characters: [],
@@ -10,7 +10,7 @@ export const useCharacter = defineStore('character-store', {
   },
 
   getters: {
-    listCharacters: (state) => state.characters
+    listCharacters: (state) => state.characters,
   },
 
   actions: {

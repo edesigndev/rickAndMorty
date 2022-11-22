@@ -1,15 +1,15 @@
 .search-character {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  &-content {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 2rem;
-    &-content {
-        display: flex;
-        flex-direction: row;
-    }
-    &-error{
-        font-size: small;
-        color: $error;
-        margin-top: 0.2rem;
-        text-align: left;
-    }
+    flex-direction: row;
   }
+  &-error {
+    font-size: small;
+    color: $error;
+    margin-top: 0.2rem;
+    text-align: left;
+  }
+}

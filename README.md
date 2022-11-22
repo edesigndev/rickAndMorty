@@ -1,7 +1,9 @@
 # Rick And Morty Finder
 
 ### Create environment
+
 Create environment variable in root
+
 ```sh
 .env
 ```
@@ -11,6 +13,7 @@ VITE_API_ENDPOINT=https://rickandmortyapi.com/api
 ```
 
 ### Installation
+
 Install the dependencies and devDependencies and start the server.
 
 ```sh

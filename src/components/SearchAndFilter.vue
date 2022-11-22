@@ -25,44 +25,44 @@
         />
       </el-select>
     </div>
-    <div class="search-character-error" v-if="showError && text.length > 0">
+    <div v-if="showError && text.length > 0" class="search-character-error">
       <span>{{ showError }}</span>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, watch, computed } from 'vue';
-import { status } from '@/utils/enums';
+import { ref, watch, computed } from "vue";
+import { status } from "@/utils/enums";
 
 const props = defineProps({
   msgError: {
     type: String,
-    default: '',
+    default: "",
   },
 });
 
-const text = ref('');
-const statusFilter = ref('');
+const text = ref("");
+const statusFilter = ref("");
 const error = ref(false);
 const options = Object.values(status);
 
-const emit = defineEmits(['text-search', 'change-filter']);
+const emit = defineEmits(["text-search", "change-filter"]);
 
 watch(text, (val) => {
   text.value = val.trim();
 
-  emit('text-search', text.value, statusFilter.value);
+  emit("text-search", text.value, statusFilter.value);
 });
 const showError = computed(() => {
-  let msj = '';
+  let msj = "";
   const count = text.value.length;
   if (count > 0 && count < 4) {
-    msj = 'Minimo 4 caracteres';
+    msj = "Minimo 4 caracteres";
   } else if (props.msgError) {
     msj = props.msgError;
   } else {
-    msj = '';
+    msj = "";
   }
   return msj;
 });
